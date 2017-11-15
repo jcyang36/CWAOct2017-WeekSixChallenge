@@ -1,0 +1,25 @@
+
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse
+.navbar-nav>li >a:hover {
+
+    color: beige;
+    background-color: mediumblue;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: beige;
+    background-color:darkblue;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color:mediumblue;
+}
+
+.navbar-inverse {
+    background-color: darkblue;
+    border-color: mediumblue;
+}
+.navbar-inverse {
+    background-image:none;
+}

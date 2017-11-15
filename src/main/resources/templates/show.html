@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="main::headstuff">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="main::navclass"></div>
+<a href="/">Show All Courses</a><br/>
+Account Number:<span th:text="${transaction.accountNumber}"></span><br/>
+Action:<span th:text="${transaction.action}"></span><br/>
+Amount:<span th:text="${transaction.amount}"></span><br/>
+Reason:<span th:text="${transaction.reason}"></span><br/>
+</body>
+</html>

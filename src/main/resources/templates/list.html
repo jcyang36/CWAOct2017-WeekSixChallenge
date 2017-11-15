@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="main::headstuff">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="main::navclass"></div>
+<table>
+    <tr>
+        <th>Account Number</th>
+        <th>Action </th>
+        <th>Amount</th>
+        <th>Reason</th>
+    </tr>
+    <tr th:each="transaction:${transactions}">
+        <td th:text="${transaction.accountNumber}"></td>
+        <td th:text="${transaction.action}"></td>
+        <td th:text="${transaction.amount}"></td>
+        <td th:text="${transaction.reason}"></td>
+        <td >
+            <a th:href="@{/detail/{id}(id=${transaction.id})}">Details</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
