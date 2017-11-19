@@ -43,8 +43,11 @@ UserRepository userRepository;
         transaction.setAction("deposit");
         String username = principal.getName();
         User user_current = userRepository.findByUsername(username);
-        transaction.setAccountNumber(user_current.getAccount());
 
+if (username.equalsIgnoreCase("user")){
+    transaction.setAccountNumber(9999);
+        }
+        else{transaction.setAccountNumber(user_current.getAccount());}
         model.addAttribute("transaction", transaction);
         return "deposit";
     }
@@ -55,7 +58,10 @@ UserRepository userRepository;
         transaction.setAction("withdrawal");
         String username = principal.getName();
         User user_current = userRepository.findByUsername(username);
-        transaction.setAccountNumber(user_current.getAccount());
+        if (username.equalsIgnoreCase("user")){
+            transaction.setAccountNumber(9999);
+        }
+      else{  transaction.setAccountNumber(user_current.getAccount());}
 
         model.addAttribute("transaction", transaction);
 
@@ -71,6 +77,10 @@ UserRepository userRepository;
         transaction.setAction("deposit");
         String username = principal.getName();
         User user_current = userRepository.findByUsername(username);
+        if (username.equalsIgnoreCase("user")){
+            transaction.setAccountNumber(9999);
+        }
+        else{  transaction.setAccountNumber(user_current.getAccount());}
         transaction.setAccountNumber(user_current.getAccount());
 
         transactionRepository.save(transaction);
@@ -87,7 +97,11 @@ UserRepository userRepository;
         transaction.setAction("withdrawal");
         String username = principal.getName();
         User user_current = userRepository.findByUsername(username);
-        transaction.setAccountNumber(user_current.getAccount());
+
+        if (username.equalsIgnoreCase("user")){
+            transaction.setAccountNumber(9999);
+        }
+        else{  transaction.setAccountNumber(user_current.getAccount());}
 
         transactionRepository.save(transaction);
         return "redirect:/list";
@@ -112,6 +126,7 @@ public String processRegistrationPage(@Valid @ModelAttribute("user") User user, 
 if(bindingResult.hasErrors()){
     return "register";
 }else{
+
     userService.saveUser(user);
     model.addAttribute("message", "User Account Successfully Created");
     return "login";
