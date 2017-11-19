@@ -6,14 +6,15 @@
 </head>
 <body>
 <div th:replace="main::navclass"></div>
-<form action="#" th:action="@{/processdeposit}" th:object="${transaction}" method="post">
+<h2>Withdrawal Form</h2>
+<form action="#" th:action="@{/processwithdrawal}" th:object="${transaction}" method="post">
 
     <input type="hidden" th:field="*{id}"/>
 
-    Account Number: <input type="text" th:field="*{accountNumber}"/><span th:if="${#fields.hasErrors('accountNumber')}" th:errors="*{accountNumber}"></span><br/>
-
+    Account number:<input type="text" th:field="*{accountNumber}"/><span th:if="${#fields.hasErrors('accountNumber')}" th:errors="*{accountNumber}"></span><br/>
     Action: <input type="text" th:field="*{action}"/><span th:if="${#fields.hasErrors('action')}" th:errors="*{action}"></span><br/>
-    Amount: <input type="text" th:field="*{amount}"/><span th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span><br/>
+
+      Amount: <input type="text" th:field="*{amount}"/><span th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span><br/>
 
     Reason: <input type="text" th:field="*{reason}"/><span th:if="${#fields.hasErrors('reason')}" th:errors="*{reason}"></span><br/>
 

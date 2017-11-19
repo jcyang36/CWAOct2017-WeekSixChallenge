@@ -9,7 +9,8 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-
+@Column(name="account")
+private long account;
     @Column(name="email", nullable = false)
     private String email;
 
@@ -96,5 +97,13 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public long getAccount() {
+        return account;
+    }
+
+    public void setAccount(long account) {
+        this.account = account;
     }
 }

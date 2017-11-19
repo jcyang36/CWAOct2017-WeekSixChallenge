@@ -22,6 +22,10 @@
 </strong>
     <input type="text" id="email" placeholder="Email" th:field= "*{email}"/><br/><br/>
 
+    <p class= "col-md-2"></p> <label class= "col-md-4">Account number</label><strong>
+    <span class= "alert alert-danger" th:if= "${#fields.hasErrors('account')}" th:errors= "*{account}">Account Error</span>
+</strong>
+    <input type= "text" id= "account" placeholder="Account" th:field= "*{account}"/><br/><br/>
     <p class= "col-md-2"></p> <label class= "col-md-4">Username</label><strong>
     <span class= "alert alert-danger" th:if= "${#fields.hasErrors('username')}" th:errors= "*{username}">Username Error</span>
 </strong>
