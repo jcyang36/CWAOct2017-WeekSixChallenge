@@ -39,6 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login").permitAll().permitAll();
 
 
+
     }
 
     @Override

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="headstuff">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
@@ -31,6 +31,7 @@
                 <li><a href="/withdrawal">Withdrawal</a></li>
                 <li><a href="/balance">Balance</a></li>
                 <li><a href="/list">List</a></li>
+                <li><a href="/logout"  sec:authorize="isAuthenticated()">Logout</a></li>
             </ul>
         </div>
     </div>
